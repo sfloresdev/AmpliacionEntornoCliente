@@ -142,3 +142,40 @@ label {
 .text-input::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
+
+.day-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.18s ease, color 0.18s ease;
+
+    background-color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/*
+.day-toggle.selected {
+    background-color: #0072f5;
+    color: #ffffff;
+    border-color: #0072f5;
+}
+*/
+
+.day-toggle.active-editing {
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateX(-10px); }
+    to {opacity: 1; transform: translateX(0); }
+}

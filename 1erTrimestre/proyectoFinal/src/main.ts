@@ -51,6 +51,10 @@ function calcularYMostrarResultado() {
 
 function renderEXE() {
     renderView(EXERCISE_VIEW, addEventHome);
+    const homeButton = document.getElementById("B_HOME");
+
+    if (homeButton)
+        homeButton.addEventListener('click', renderHome);
 }
 
 function addEventHome() {

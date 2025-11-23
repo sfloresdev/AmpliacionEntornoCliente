@@ -1,16 +1,27 @@
-export function calculateExercises() {
-
+export type Horas = number[];
+export interface Result {
+    diasEntrenados: number;
+    horasPorDia: Horas;
+    objetivoSemanal: number;
+    totalHoras: number;
+    tiempoMedio: number;
+    objetivoAlcanzado: boolean;
+    nota: 1 | 2 | 3;
 }
 
-function actulizarBotones() {
-    const botones = document.querySelectorAll("day-toggle");
+export function calculateExercises(): Result {
 
-    botones.forEach((btn, i) =>{
-        btn.classList.remove('selected', 'active-editing');
-        
-        if (horasSemana)
-    
-    
-    
-    });
+    let arr: Horas = [];
+
+
+
+    return {
+        diasEntrenados: 0,
+        horasPorDia: arr,
+        objetivoSemanal: 0,
+        totalHoras: 0,
+        tiempoMedio: 0,
+        objetivoAlcanzado: false,
+        nota: 1
+    }
 }

@@ -22,31 +22,50 @@ export const IMC_VIEW = `
 `;
 export const EXERCISE_VIEW = `
     <div id="container">
-    <label>Calculadora de Ejercicio</label>
+        <label class="card-title">Calculadora de Ejercicio</label>
 
-    <label for="objetivo">Objetivo de horas semanales</label>
-    <input type="number" class="text-input" id="T_TARGET" placeholder="Ej: 10">
-    
-    <label style="margin-top: 15px;">Registro diario</label>
-    <div id="day-selector">
-        <div class="day-toggle">L</div>
-        <div class="day-toggle">M</div>
-        <div class="day-toggle">X</div>
-        <div class="day-toggle">J</div>
-        <div class="day-toggle">V</div>
-        <div class="day-toggle">S</div>
-        <div class="day-toggle">D</div>
-    </div>
+        <label for="T_TARGET">Objetivo semanal (Horas totales)</label>
+        <input type="number" class="text-input" id="T_TARGET" placeholder="Ej: 10">
+        
+        <label style="margin-top: 15px;">Horas entrenadas por día:</label>
 
-    <div id="day-editor" style="display: none; animation: fadeIn 0.3s;">
-        <label id="day-label-dynamic" style="color: #0072f5;">Horas del Lunes</label>
-        <input type="number" class="text-input" id="day-hours-input" placeholder="0">
-    </div>
+        <div id="day-inputs">
+            <div class="day-input-group">
+                <label for="input-L">L</label>
+                <input type="number" class="text-input day-time-input" id="input-L">
+            </div>
+            <div class="day-input-group">
+                <label for="input-M">M</label>
+                <input type="number" class="text-input day-time-input" id="input-M">
+            </div>
+            <div class="day-input-group">
+                <label for="input-X">X</label>
+                <input type="number" class="text-input day-time-input" id="input-X">
+            </div>
+            <div class="day-input-group">
+                <label for="input-J">J</label>
+                <input type="number" class="text-input day-time-input" id="input-J">
+            </div>
+            <div class="day-input-group">
+                <label for="input-V">V</label>
+                <input type="number" class="text-input day-time-input" id="input-V">
+            </div>
+            <div class="day-input-group">
+                <label for="input-S">S</label>
+                <input type="number" class="text-input day-time-input" id="input-S">
+            </div>
+            <div class="day-input-group">
+                <label for="input-D">D</label>
+                <input type="number" class="text-input day-time-input" id="input-D">
+            </div>
+        </div>
+        
+        <div id="EXE_RESULT" style="margin-top: 15px;"></div>
 
-    <div style="height: 20px;"></div>
+        <div style="height: 20px;"></div>
 
-    <input type="button" class="btn" id="T_EXE" value="Calcular resumen">
-    <input type="button" class="btn" id="B_HOME" value="Volver al inicio">
+        <input type="button" class="btn" id="T_EXE" value="Calcular resumen">
+        <input type="button" class="btn" id="B_HOME" value="Volver al inicio">
     </div>
 `;
 //# sourceMappingURL=views.js.map

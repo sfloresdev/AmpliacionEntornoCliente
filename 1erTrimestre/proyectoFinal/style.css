@@ -143,36 +143,38 @@ label {
     color: rgba(255, 255, 255, 0.5);
 }
 
-.day-toggle {
-    display: inline-flex;
-    align-items: center;
+/* Contenedor para los 7 días */
+#day-inputs {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 35px;
-    height: 35px;
-    padding: 0;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.18s ease, color 0.18s ease;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 10px;
+}
 
-    background-color: #1a1a1a;
-    color: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* Grupo día + input */
+.day-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22%;
+    margin: 5px 4px;
+}
+
+/* Input específico de tiempo (muy pequeño) */
+.day-time-input {
+    width: 30px;
+    text-align: center;
+    padding: 4px;
+    margin-top: 4px;
     font-size: 0.85rem;
-    font-weight: 500;
 }
 
-/*
-.day-toggle.selected {
-    background-color: #0072f5;
-    color: #ffffff;
-    border-color: #0072f5;
-}
-*/
-
-.day-toggle.active-editing {
-    border-color: #ffffff;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
+.day-input-group label {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 @keyframes fadeIn {

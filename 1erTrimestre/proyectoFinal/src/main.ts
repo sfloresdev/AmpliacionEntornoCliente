@@ -2,12 +2,10 @@ import { EXERCISE_VIEW, HOME_VIEW, IMC_VIEW } from "./views.js";
 import { calculateBmi } from "./imc.js";
 import { calculateExercises } from "./exerciseCalculator.js";
 
-const DIAS_SEMANA = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
-let horasSemana: number[] = [0, 0, 0, 0, 0, 0, 0];
-let diaActualIndice: number | null = null;
 // Elementos del DOM
 const appContainer = document.getElementById("app");
 
+// Funcion general para renderizar cada vista
 function renderView(content: string, listeners: () => void) {
     if (!appContainer)
         throw new Error("Error al cargar la pagina");
@@ -28,20 +26,23 @@ function renderIMC() {
 }
 
 function calcularYMostrarResultadoIMC() {
-    let result = document.getElementById("IMC_RESULT");
+    const result = document.getElementById("IMC_RESULT");
 
     if (!result)
         return;
 
     try {
         const resultadoCalculo = calculateBmi();
-
+        
+        // Desestructuración del IMC
         const valorIMC = resultadoCalculo.imc.toFixed(2);
         const categoria = resultadoCalculo.tipo;
-
+        
         result.innerHTML = `
+         <p style="color: #fff">
             Tu IMC es: <strong>${valorIMC}</strong>.<br>
             Categoria: <strong>${categoria}</strong>.
+         </p>
         `;
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : "Error no definido";
@@ -59,23 +60,45 @@ function renderEXE() {
     if (homeButton)
         homeButton.addEventListener('click', renderHome);
     if (calculateButton)
-        calculateButton.addEventListener('click', renderEXE);
+        calculateButton.addEventListener('click', calcularYMostrarResultadoEXE);
 }
 
+function calcularYMostrarResultadoEXE() {
 
+    const result = document.getElementById('EXE_RESULT');
 
+    if (!result)
+        return;
 
+    try {
+        const resultadosUsuario = calculateExercises();
 
+        // Desestructuración del objeto/interfaz.
+        const diasEntrenados = resultadosUsuario.trainedDays;
+        const conseguido = resultadosUsuario.success;
+        const calificacion = resultadosUsuario.rate;
+        const descripcion = resultadosUsuario.ratingDescription;
+        const objetivo = resultadosUsuario.target;
+        const media = resultadosUsuario.average;
 
+        result.innerHTML = `
+            <p style="color: #fff">
+            Dias entrenados: <strong>${diasEntrenados}</strong><br>
+            ¿Objetivo conseguido?: <strong> ${conseguido ? "Si" : "No"} </strong><br>
+            Objetivo semanal: <strong>${objetivo}</strong><br>
+            Media calculada: <strong>${media}</strong><br>
+            Descripción : <strong>${descripcion}</strong><br><br>
 
+            Calificación : <strong style="color: #0072f5">${calificacion}</strong><br>
+            </p>
+        `;
 
-
-
-
-
-
-
-
+    } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : "Error no definido";
+        result.innerHTML = `Error: ${errorMessage}`;
+        result.style.color = '#ff4444';
+    }
+}
 
 // Bloque para añadir los eventos al cargar la Home
 function renderHome() {

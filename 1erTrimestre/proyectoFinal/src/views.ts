@@ -34,31 +34,31 @@ export const EXERCISE_VIEW: string = `
         <div id="day-inputs">
             <div class="day-input-group">
                 <label for="input-L">L</label>
-                <input type="number" class="text-input day-time-input" id="input-L">
+                <input type="number" class="text-input day-time-input" id="input-1">
             </div>
             <div class="day-input-group">
                 <label for="input-M">M</label>
-                <input type="number" class="text-input day-time-input" id="input-M">
+                <input type="number" class="text-input day-time-input" id="input-2">
             </div>
             <div class="day-input-group">
                 <label for="input-X">X</label>
-                <input type="number" class="text-input day-time-input" id="input-X">
+                <input type="number" class="text-input day-time-input" id="input-3">
             </div>
             <div class="day-input-group">
                 <label for="input-J">J</label>
-                <input type="number" class="text-input day-time-input" id="input-J">
+                <input type="number" class="text-input day-time-input" id="input-4">
             </div>
             <div class="day-input-group">
                 <label for="input-V">V</label>
-                <input type="number" class="text-input day-time-input" id="input-V">
+                <input type="number" class="text-input day-time-input" id="input-5">
             </div>
             <div class="day-input-group">
                 <label for="input-S">S</label>
-                <input type="number" class="text-input day-time-input" id="input-S">
+                <input type="number" class="text-input day-time-input" id="input-6">
             </div>
             <div class="day-input-group">
                 <label for="input-D">D</label>
-                <input type="number" class="text-input day-time-input" id="input-D">
+                <input type="number" class="text-input day-time-input" id="input-7">
             </div>
         </div>
         

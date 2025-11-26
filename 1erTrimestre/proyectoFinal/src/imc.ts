@@ -1,5 +1,6 @@
-const TiposPeso = { BAJO: "Peso bajo, come mas", NORMAL: "Peso normal, sigue asi campeón", SOBREPESO: "Menos hamburguesas chaval", OBESIDAD: "Diego gordo de mierda" };
+const TiposPeso = { BAJO: "Peso bajo, busca una nutrición que te fortalezca!", NORMAL: "Peso normal, Tienes un excelente equilibrio, sigue así!", SOBREPESO: "Sobrepeso, Estás a tiempo de hacer pequeños cambios positivos!", OBESIDAD: "Obesidad, Tu bienestar es prioridad!" };
 export function calculateBmi() {
+    // Inputs del DOM
     const alturaInput = document.getElementById("C_HEIGHT") as HTMLInputElement | null;
     const pesoInput = document.getElementById("C_WEIGHT") as HTMLInputElement | null;
 
@@ -16,6 +17,7 @@ export function calculateBmi() {
     if (error)
         throw new Error(error);
 
+    // Calculo del IMC
     const alturaEnMetros: number = altura / 100;
     const IMC: number = peso / (alturaEnMetros * alturaEnMetros);
     const categoria: string = determinarTipoPeso(IMC);
